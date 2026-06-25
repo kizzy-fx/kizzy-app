@@ -1,0 +1,1513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Rise & Shine - Motivation App</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+    <section id="onboarding1">
+
+    <div class="welcome-card">
+
+        <h1>Welcome to Rise & Shine ✨</h1>
+
+        <p class="subtitle">
+            Your personal motivation companion designed to help you stay focused,
+            build better habits, and achieve your goals one day at a time.
+        </p>
+
+        <p class="small-text">
+            Let's personalize your experience in less than 2 minutes.
+        </p>
+
+        <button onclick="nextScreen()">
+            Get Started
+        </button>
+
+    </div>
+
+</section>
+
+<div id="onboarding2" style="display:none;">
+
+    <div class="welcome-card">
+
+        <h1>How old are you?</h1>
+
+        <p class="subtitle">
+            This helps us personalize your motivation experience.
+        </p>
+
+        <div class="age-options">
+
+            <button onclick="selectAge(this,'13-17')">13 - 17</button>
+
+<button onclick="selectAge(this,'18-24')">18 - 24</button>
+
+<button onclick="selectAge(this,'25-34')">25 - 34</button>
+
+<button onclick="selectAge(this,'35-44')">35 - 44</button>
+
+<button onclick="selectAge(this,'45-54')">45 - 54</button>
+
+<button onclick="selectAge(this,'55+')">55+</button>
+
+        </div>
+
+        <button class="continue-btn"onclick="goToScreen3()">
+            Continue
+        </button>
+
+    </div>
+
+</div>
+
+<div id="onboarding3" style="display:none;">
+
+<div class="welcome-card">
+
+<h1>What's your name?</h1>
+
+<p class="subtitle">
+
+We'll use your name to personalize your experience.
+
+</p>
+
+<input
+type="text"
+id="userName"
+placeholder="Enter your name">
+
+<button onclick="saveName()">
+
+Continue
+
+</button>
+
+</div>
+
+</div>
+
+
+<div id="onboarding4" class="onboarding-screen" style="display:none;">
+
+    <div class="welcome-card">
+
+    <h2>Which option best represents you?</h2>
+
+    <div class="option-card" onclick="selectGender(this,'Male')">
+        Male
+    </div>
+
+    <div class="option-card" onclick="selectGender(this,'Female')">
+        Female
+    </div>
+
+    <div class="option-card" onclick="selectGender(this,'Other')">
+        Other
+    </div>
+
+    <div class="option-card" onclick="selectGender(this,'Prefer not to say')">
+        Prefer not to say
+    </div>
+
+    <button onclick="goToScreen5()">
+        Continue
+    </button>
+
+</div>
+
+</div>
+
+<div id="onboarding5" style="display:none;">
+
+<div class="welcome-card">
+
+<h2>What's your relationship status?</h2>
+
+<div class="relationship-card"
+onclick="selectRelationship(this,'Single')">
+Single
+</div>
+
+<div class="relationship-card"
+onclick="selectRelationship(this,'Happy Relationship')">
+Happy Relationship
+</div>
+
+<div class="relationship-card"
+onclick="selectRelationship(this,'Challenging Relationship')">
+Challenging Relationship
+</div>
+
+<div class="relationship-card"
+onclick="selectRelationship(this,'Going Through Breakup')">
+Going Through Breakup
+</div>
+
+<div class="relationship-card"
+onclick="selectRelationship(this,'Married')">
+Married
+</div>
+
+<div class="relationship-card"
+onclick="selectRelationship(this,'Prefer Not To Say')">
+Prefer Not To Say
+</div>
+
+<button onclick="goToScreen6()">
+Continue
+</button>
+
+</div>
+
+</div>
+
+
+<div id="onboarding6" style="display:none;">
+
+<div class="welcome-card">
+
+<h2>Are you religious?</h2>
+
+<p class="subtitle">
+This helps us personalize your experience.
+</p>
+
+<div class="option-card"
+onclick="selectReligionChoice(this,'Yes')">
+Yes
+</div>
+
+<div class="option-card"
+onclick="selectReligionChoice(this,'No')">
+No
+</div>
+
+<button onclick="goToScreen7()">
+Continue
+</button>
+
+</div>
+
+</div>
+
+<div id="onboarding7" style="display:none;">
+
+<div class="welcome-card">
+
+<h2>Which belief best describes you?</h2>
+
+<div class="belief-card"
+onclick="selectBelief(this,'Christianity')">
+Christianity
+</div>
+
+<div class="belief-card"
+onclick="selectBelief(this,'Islam')">
+Islam
+</div>
+
+<div class="belief-card"
+onclick="selectBelief(this,'Traditional Religion')">
+Traditional Religion
+</div>
+
+<div class="belief-card"
+onclick="selectBelief(this,'Spiritual')">
+Spiritual
+</div>
+
+<div class="belief-card"
+onclick="selectBelief(this,'Atheist')">
+Atheist
+</div>
+
+<div class="belief-card"
+onclick="selectBelief(this,'Other')">
+Other
+</div>
+
+<button onclick="goToScreen8()">
+Continue
+</button>
+
+</div>
+
+</div>
+
+
+
+<div id="onboarding8" style="display:none;">
+
+<div class="welcome-card">
+
+<h2>What is your biggest source of motivation?</h2>
+
+<div class="motivation-card"
+onclick="selectMotivation(this,'Family')">
+Family
+</div>
+
+<div class="motivation-card"
+onclick="selectMotivation(this,'Success')">
+Success
+</div>
+
+<div class="motivation-card"
+onclick="selectMotivation(this,'Money')">
+Money
+</div>
+
+<div class="motivation-card"
+onclick="selectMotivation(this,'Faith')">
+Faith
+</div>
+
+<div class="motivation-card"
+onclick="selectMotivation(this,'Career')">
+Career
+</div>
+
+<div class="motivation-card"
+onclick="selectMotivation(this,'Friends')">
+Friends
+</div>
+
+<div class="motivation-card"
+onclick="selectMotivation(this,'Love')">
+Love
+</div>
+
+<div class="motivation-card"
+onclick="selectMotivation(this,'Personal Growth')">
+Personal Growth
+</div>
+
+<button onclick="goToScreen9()">
+Continue
+</button>
+
+</div>
+
+</div>
+
+
+
+
+<div id="onboarding9" style="display:none;">
+
+<div class="welcome-card">
+
+<h2>What do you do when you're not motivated?</h2>
+
+<div class="unmotivated-card"
+onclick="selectUnmotivated(this,'Sleep')">
+Sleep
+</div>
+
+<div class="unmotivated-card"
+onclick="selectUnmotivated(this,'Listen to Music')">
+Listen to Music
+</div>
+
+<div class="unmotivated-card"
+onclick="selectUnmotivated(this,'Watch Videos')">
+Watch Videos
+</div>
+
+<div class="unmotivated-card"
+onclick="selectUnmotivated(this,'Pray')">
+Pray
+</div>
+
+<div class="unmotivated-card"
+onclick="selectUnmotivated(this,'Exercise')">
+Exercise
+</div>
+
+<div class="unmotivated-card"
+onclick="selectUnmotivated(this,'Talk to Someone')">
+Talk to Someone
+</div>
+
+<div class="unmotivated-card"
+onclick="selectUnmotivated(this,'Stay Alone')">
+Stay Alone
+</div>
+
+<div class="unmotivated-card"
+onclick="selectUnmotivated(this,'Work Harder')">
+Work Harder
+</div>
+
+<button onclick="goToScreen10()">
+Continue
+</button>
+
+</div>
+
+</div>
+
+
+
+<div id="onboarding10" style="display:none;">
+
+<div class="welcome-card">
+
+<h2>Build a streak one day at a time</h2>
+
+<p>Select the days you want Rise & Shine to motivate you.</p>
+
+<div class="day-card" onclick="toggleDay(this,'Monday')">
+Monday
+</div>
+
+<div class="day-card" onclick="toggleDay(this,'Tuesday')">
+Tuesday
+</div>
+
+<div class="day-card" onclick="toggleDay(this,'Wednesday')">
+Wednesday
+</div>
+
+<div class="day-card" onclick="toggleDay(this,'Thursday')">
+Thursday
+</div>
+
+<div class="day-card" onclick="toggleDay(this,'Friday')">
+Friday
+</div>
+
+<div class="day-card" onclick="toggleDay(this,'Saturday')">
+Saturday
+</div>
+
+<div class="day-card" onclick="toggleDay(this,'Sunday')">
+Sunday
+</div>
+
+<button onclick="goToScreen11()">
+Continue
+</button>
+
+</div>
+
+</div>
+
+
+
+<div id="onboarding11" style="display:none;">
+
+<div class="welcome-card">
+
+<h2>Which area of your life would you like to improve most?</h2>
+
+<div class="improve-card"
+onclick="selectImprove(this,'Finances')">
+💰 Finances
+</div>
+
+<div class="improve-card"
+onclick="selectImprove(this,'Education')">
+📚 Education
+</div>
+
+<div class="improve-card"
+onclick="selectImprove(this,'Career')">
+💼 Career
+</div>
+
+<div class="improve-card"
+onclick="selectImprove(this,'Fitness & Health')">
+🏋️ Fitness & Health
+</div>
+
+<div class="improve-card"
+onclick="selectImprove(this,'Relationships')">
+❤️ Relationships
+</div>
+
+<div class="improve-card"
+onclick="selectImprove(this,'Mental Strength')">
+🧠 Mental Strength
+</div>
+
+<div class="improve-card"
+onclick="selectImprove(this,'Spiritual Growth')">
+🙏 Spiritual Growth
+</div>
+
+<div class="improve-card"
+onclick="selectImprove(this,'Business & Entrepreneurship')">
+🏢 Business & Entrepreneurship
+</div>
+
+<div class="improve-card"
+onclick="selectImprove(this,'Trading & Investing')">
+📈 Trading & Investing
+</div>
+
+<button onclick="goToScreen12()">
+Continue
+</button>
+
+</div>
+
+</div>
+
+<div id="onboarding12" style="display:none;">
+
+<div class="welcome-card">
+
+<h2>How often would you like motivation?</h2>
+
+<div class="frequency-card"
+onclick="selectFrequency(this,'Once a day')">
+Once a day
+</div>
+
+<div class="frequency-card"
+onclick="selectFrequency(this,'Twice a day')">
+Twice a day
+</div>
+
+<div class="frequency-card"
+onclick="selectFrequency(this,'Three times a day')">
+Three times a day
+</div>
+
+<div class="frequency-card"
+onclick="selectFrequency(this,'Weekly')">
+Weekly
+</div>
+
+<div class="frequency-card"
+onclick="selectFrequency(this,'Only when I open the app')">
+Only when I open the app
+</div>
+
+<button onclick="goToScreen13()">
+Continue
+</button>
+
+</div>
+
+</div>
+
+
+<div id="onboarding13" style="display:none;">
+
+<div class="welcome-card">
+
+<h2>What type of motivation works best for you?</h2>
+
+<div class="motivation-type-card"
+onclick="selectMotivationType(this,'Inspirational Quotes')">
+Inspirational Quotes
+</div>
+
+<div class="motivation-type-card"
+onclick="selectMotivationType(this,'Daily Affirmations')">
+Daily Affirmations
+</div>
+
+<div class="motivation-type-card"
+onclick="selectMotivationType(this,'Success Stories')">
+Success Stories
+</div>
+
+<div class="motivation-type-card"
+onclick="selectMotivationType(this,'Daily Challenges')">
+Daily Challenges
+</div>
+
+<div class="motivation-type-card"
+onclick="selectMotivationType(this,'Goal Tracking')">
+Goal Tracking
+</div>
+
+<div class="motivation-type-card"
+onclick="selectMotivationType(this,'Motivational Videos')">
+Motivational Videos
+</div>
+
+<div class="motivation-type-card"
+onclick="selectMotivationType(this,'All of the Above')">
+All of the Above
+</div>
+
+<button onclick="goToScreen14()">
+Continue
+</button>
+
+</div>
+
+</div>
+
+<div id="onboarding14" style="display:none;">
+
+<div class="welcome-card">
+
+<h2>What are your top 3 goals right now?</h2>
+
+<input
+type="text"
+id="goal1"
+placeholder="Goal 1">
+
+<input
+type="text"
+id="goal2"
+placeholder="Goal 2">
+
+<input
+type="text"
+id="goal3"
+placeholder="Goal 3">
+
+<button onclick="goToScreen15()">
+Continue
+</button>
+
+</div>
+
+</div>
+
+
+
+<div id="onboarding15" style="display:none;">
+
+<div class="welcome-card">
+
+<h2>You're Ready!</h2>
+
+<p id="summaryText"></p>
+
+<button onclick="finishOnboarding()">
+Start My Journey 🚀
+</button>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="loader">
+
+<h1>🌟 Rise & Shine</h1>
+
+<p>Loading Motivation...</p>
+
+</div>
+
+<div class="app-container">
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+<div class="logo">
+
+<h2>🌟 Rise & Shine</h2>
+
+</div>
+
+<ul>
+
+<li onclick="showSection('home')">
+
+<i class="fas fa-house"></i>
+
+<span>Home</span>
+
+
+<li onclick="showSection('favorites')">
+
+<i class="fas fa-heart"></i>
+
+<span>Favorites</span>
+
+</li>
+
+<li onclick="showSection('goals')">
+
+<i class="fas fa-bullseye"></i>
+
+<span>Goals</span>
+
+
+</li>
+
+<li onclick="showSection('vision')">
+
+<i class="fas fa-rocket"></i>
+
+<span>Vision Board</span>
+
+</li>
+
+<li onclick="showSection('progress')">
+
+<i class="fas fa-chart-line"></i>
+
+<span>Progress</span>
+
+</li>
+
+<li onclick="showSection('affirmations')">
+
+<i class="fas fa-star"></i>
+
+<span>Affirmations</span>
+
+</li>
+
+
+
+<li onclick="showSection('settings')">
+
+<i class="fas fa-gear"></i>
+
+<span>Settings</span>
+
+
+</li>
+
+</ul>
+
+</div>
+
+<!-- MAIN CONTENT -->
+
+<div class="main-content">
+
+<header>
+
+<div class="welcome">
+
+<h1>Welcome Back 👋</h1>
+
+<p>Stay Inspired. Stay Consistent.</p>
+
+</div>
+
+<div class="profile">
+
+<img src="https://i.pravatar.cc/100" alt="profile">
+
+</div>
+
+</header>
+
+<!-- HOME SECTION -->
+
+<section id="home" class="page active">
+
+<div class="hero-card">
+
+<h1>Daily Motivation</h1>
+
+<p id="dailyQuote">
+
+Success doesn't come from what you do occasionally,
+it comes from what you do consistently.
+
+</p>
+<h4 id="quoteAuthor">- Rise & Shine</h4>
+
+<button onclick="generateQuote()">
+
+New Quote
+
+</button>
+
+<button onclick="saveFavorite()">
+
+Save Quote
+
+</button>
+
+</div>
+
+<div class="stats-grid">
+
+
+
+<div class="stat-card">
+
+<h2 id="goalCount">0</h2>
+
+<p>Goals</p>
+
+</div>
+
+<div class="stat-card">
+
+<h2 id="streakCount">0</h2>
+
+<p>Day Streak</p>
+
+</div>
+
+<div class="stat-card">
+
+<h2 id="favoriteCount">0</h2>
+
+<p>Favorites</p>
+
+</div>
+
+</div>
+
+</section>
+<!-- QUOTES PAGE -->
+
+<section id="quotes" class="page">
+
+<h1 class="page-title">Motivational Quotes</h1>
+
+<div class="search-box">
+    <div class="category-buttons">
+
+<button onclick="filterCategory('all')">All</button>
+
+<button onclick="filterCategory('success')">🚀 Success</button>
+
+<button onclick="filterCategory('business')">💰 Business</button>
+
+<button onclick="filterCategory('forex')">📈 Forex</button>
+
+<button onclick="filterCategory('education')">🎓 Education</button>
+
+<button onclick="filterCategory('fitness')">💪 Fitness</button>
+
+<button onclick="filterCategory('relationship')">❤️ Relationship</button>
+
+</div>
+
+<div class="search-box">
+
+<input type="text"
+id="searchQuote"
+class="search-box"
+placeholder="Search Quotes..."
+onkeyup="searchQuotes()">
+
+<button class="search-btn">
+<i class="fas fa-search"></i>
+</button>
+
+</div>
+
+</div>
+
+<div class="quote-grid" id="quoteContainer">
+
+<!-- Quotes will load here from quotes.js -->
+
+</div>
+
+</section>
+
+<section id="journal" class="page">
+
+<h1 class="page-title">📔 Journal</h1>
+
+<textarea
+id="journalText"
+placeholder="Write your thoughts here..."
+></textarea>
+
+<button onclick="saveJournal()">
+💾 Save Entry
+</button>
+
+<div id="journalSaved"></div>
+
+</section>
+
+<!-- FAVORITES PAGE -->
+
+<section id="favorites" class="page">
+
+<h1 class="page-title">
+
+❤️ Favorite Quotes
+
+</h1>
+
+<div class="favorite-container"
+id="favoriteContainer">
+
+<p class="empty-message">
+
+No favorite quotes yet.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- GOALS PAGE -->
+
+<section id="goals" class="page">
+
+<h1 class="page-title">
+
+🎯 Goal Tracker
+
+</h1>
+
+<div class="goal-form">
+
+<input
+type="text"
+id="goalInput"
+placeholder="Enter your goal">
+
+<button onclick="addGoal()">
+
+Add Goal
+
+</button>
+
+</div>
+
+<div id="goalList"
+class="goal-list">
+
+</div>
+
+</section>
+
+<!-- VISION BOARD PAGE -->
+
+<section id="vision" class="page">
+
+<h1 class="page-title">
+
+🚀 Vision Board
+
+</h1>
+
+<div class="vision-form">
+
+<input
+type="text"
+id="visionInput"
+placeholder="Add your dream">
+
+<button onclick="addVision()">
+
+Add Dream
+
+</button>
+
+</div>
+
+<div id="visionBoard"
+class="vision-board">
+
+</div>
+
+</section>
+
+<!-- PROGRESS PAGE -->
+
+<section id="progress" class="page">
+
+<h1 class="page-title">
+
+📊 Progress Dashboard
+
+</h1>
+
+<div class="progress-cards">
+
+<div class="progress-card">
+
+<h2 id="totalGoals">
+
+
+
+</h2>
+
+<p>Total Goals</p>
+
+</div>
+
+<div class="progress-card">
+
+<h2 id="completedGoals">
+
+0
+
+</h2>
+
+<p>Completed</p>
+
+</div>
+
+<div class="progress-card">
+
+<h2 id="favoriteQuotes">
+
+0
+
+</h2>
+
+<p>Favorites</p>
+
+</div>
+
+<div class="progress-card">
+
+<h2 id="dailyStreak">
+
+0
+
+</h2>
+
+<p>Daily Streak</p>
+
+</div>
+
+</div>
+
+<div class="progress-chart">
+
+<canvas id="progressChart">
+
+</canvas>
+
+</div>
+
+</section>
+
+<!-- AFFIRMATIONS PAGE -->
+
+<section id="affirmations" class="page">
+
+<h1 class="page-title">
+
+⭐ Daily Affirmations
+
+</h1>
+
+<div class="affirmation-card">
+
+<p id="affirmationText">
+
+I am disciplined.
+I am focused.
+I am becoming better every day.
+
+</p>
+
+<button onclick="generateAffirmation()">
+
+New Affirmation
+
+</button>
+
+</div>
+
+</section>
+
+<!-- SUCCESS STORIES PAGE -->
+
+<section id="stories" class="page">
+
+<h1 class="page-title">
+
+🏆 Success Stories
+
+</h1>
+
+<div class="story-container">
+
+<div class="story-card">
+
+<h2>Never Give Up</h2>
+
+<p>
+
+Success is not about being lucky.
+It is about consistency,
+discipline and persistence.
+
+</p>
+
+</div>
+
+<div class="story-card">
+
+<h2>Small Steps Matter</h2>
+
+<p>
+
+Every successful person once started
+from zero.
+
+</p>
+
+</div>
+
+<div class="story-card">
+
+<h2>Keep Learning</h2>
+
+<p>
+
+The more knowledge you gain,
+the more opportunities you create.
+
+</p>
+
+</div>
+
+</div>
+
+
+</section>
+
+
+
+<section id="progress" class="page">
+
+<h1 class="page-title">📊 Progress</h1>
+
+<div class="progress-card">
+
+<h2 id="progressGoals">0</h2>
+
+<p>🎯 Goals Created</p>
+
+</div>
+
+<div class="progress-card">
+
+<h2 id="progressCompleted">0</h2>
+
+<p>✅ Goals Completed</p>
+
+</div>
+
+<div class="progress-card">
+
+<h2 id="progressFavorites">0</h2>
+
+<p>⭐ Favorite Quotes</p>
+
+</div>
+
+<div class="progress-card">
+
+<h2 id="progressStreak">0</h2>
+
+<p>🔥 Day Streak</p>
+
+</div>
+
+</section>
+
+
+<!--PASTE PROFILE HERE-->
+
+<section id="profile" class="page">
+
+<h1 class="page-title">👤 My Profile</h1>
+
+<div class="profile-card">
+
+<div class="profile-avatar">
+👤
+</div>
+
+<h2 id="profileName">User</h2>
+
+<div id="welcomeSetup">
+
+<h2>Welcome to Rise & Shine</h2>
+
+<input
+type="text"
+id="userNameInput"
+placeholder="Enter your name">
+
+<button onclick="saveUserName()">
+Continue
+</button>
+
+</div>
+
+<div class="xp-section">
+
+<h3>⭐ Level <span id="userLevel">1</span></h3>
+
+<p>XP: <span id="userXP">0</span>/100</p>
+
+<div class="xp-bar">
+
+<div id="xpFill"></div>
+
+</div>
+
+</div>
+
+<p>Rise & Shine Member</p>
+
+</div>
+
+<div class="profile-stats">
+
+<div class="profile-box">
+<h2 id="profileStreak">0</h2>
+<p>🔥 Day Streak</p>
+</div>
+
+<div class="profile-box">
+<h2 id="profileFavorites">0</h2>
+<p>⭐ Favorites</p>
+</div>
+
+<div class="profile-box">
+<h2 id="profileGoals">0</h2>
+<p>🎯 Goals</p>
+</div>
+
+<div class="profile-box">
+<h2 id="profileQuotes">120</h2>
+<p>📖 Quotes</p>
+</div>
+
+</div>
+
+<div class="achievement-section">
+
+<h3>🏆 Achievements</h3>
+
+<ul>
+
+<li>🥉 First Goal Completed</li>
+
+<li>🥈 7 Day Streak</li>
+
+<li>🥇 30 Day Streak</li>
+
+<li>💎 Quote Master</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<!-- SETTINGS PAGE -->
+
+ <section id="settings" class="page"> 
+
+<div class="settings-card">
+
+    <h2>About You</h2>
+
+<div class="setting-item"
+onclick="showInfo('Name', localStorage.getItem('userName'))">
+👤 Name >
+</div>
+
+<div class="setting-item"
+onclick="showInfo('Age', localStorage.getItem('userAge'))">
+🎂 Age >
+</div>
+
+<div class="setting-item"
+onclick="showInfo('Gender', localStorage.getItem('userGender'))">
+⚧ Gender >
+</div>
+
+<div class="setting-item"
+onclick="showInfo('Relationship', localStorage.getItem('relationshipStatus'))">
+❤️ Relationship >
+</div>
+
+<div class="setting-item"
+onclick="showInfo('Belief', localStorage.getItem('userBelief'))">
+🙏 Belief >
+</div>
+
+<h3>🌙 Appearance</h3>
+
+<div class="setting-row">
+<span>Dark Mode</span>
+<input type="checkbox" id="darkModeToggle">
+</div>
+
+<div class="setting-row">
+<span>Theme Color</span>
+<select>
+<option>Blue</option>
+<option>Purple</option>
+<option>Gold</option>
+<option>Dark</option>
+</select>
+</div>
+
+<hr>
+
+<h3>🔔 Notifications</h3>
+
+<div class="setting-row">
+<span>Daily Motivation</span>
+<input type="checkbox" id="notificationToggle">
+</div>
+
+<hr>
+
+<h3>📖 Quotes</h3>
+
+<div class="setting-row">
+<span>Show Authors</span>
+<input type="checkbox" id="authorToggle">
+</div>
+
+<div class="setting-row">
+<span>Auto Refresh Quotes</span>
+<input type="checkbox">
+</div>
+
+<hr>
+
+<h3>📊 Dashboard</h3>
+
+<div class="setting-row">
+<span>Show Streak</span>
+<input type="checkbox">
+</div>
+
+<div class="setting-row">
+<span>Show Statistics</span>
+<input type="checkbox">
+</div>
+
+<hr>
+
+<h3>💾 Data</h3>
+
+<div class="setting-row">
+<span>Backup Data</span>
+<button onclick="backupData()">Backup</button>
+</div>
+
+<div class="setting-row">
+<span>Restore Data</span>
+<button onclick="document.getElementById('restoreFile').click()">
+Restore
+</button>
+</div>
+
+<div class="setting-row">
+<span>Reset App</span>
+<button onclick="resetApp()">Reset</button>
+</div>
+
+</div>
+</section>
+
+<h1 class="page-title">
+ 
+</h1>
+
+<section id="challenges" class="page">
+
+<h1 class="page-title">🎯 Daily Challenges</h1>
+
+<div class="challenge-card" id="challengeQuotes">
+⬜ Read 5 Quotes
+</div>
+
+<div class="challenge-card" id="challengeFavorite">
+⬜ Save 1 Favorite Quote
+</div>
+
+<div class="challenge-card" id="challengeGoal">
+⬜ Complete 1 Goal
+</div>
+
+<div class="challenge-card" id="challengeJournal">
+⬜ Write 1 Journal Entry
+</div>
+
+</section>
+
+<!-- BOTTOM NAVIGATION -->
+
+<section id="achievements" class="page">
+
+<h1 class="page-title">🏆 Achievements</h1>
+
+<div class="achievement-card">
+🥉 First Goal Completed
+</div>
+
+<div class="achievement-card">
+🥈 7 Day Streak
+</div>
+
+<div class="achievement-card">
+🥇 30 Day Streak
+</div>
+
+<div class="achievement-card">
+💎 Read 100 Quotes
+</div>
+
+<div class="achievement-card">
+👑 Motivation Master
+</div>
+
+</section>
+
+
+<div class="bottom-nav">
+
+<button onclick="showSection('home')">
+
+<i class="fas fa-house"></i>
+
+</button>
+
+<button onclick="showSection('quotes')">
+
+<i class="fas fa-book-open"></i>
+
+</button>
+
+<button onclick="showSection('goals')">
+
+<i class="fas fa-bullseye"></i>
+
+</button>
+
+<button onclick="showSection('favorites')">
+
+<i class="fas fa-heart"></i>
+
+</button>
+
+<button onclick="toggleMenu()">
+<i class="fas fa-bars"></i>
+</button>
+
+</div>
+
+<div id="moreMenu" class="more-menu">
+
+<button onclick="showSection('journal')">
+📔
+</button>
+
+<button onclick="showSection('progress')">
+📊
+</button>
+
+<button onclick="showSection('profile')">
+
+<i class="fas fa-user"></i>
+
+</button>
+
+<button onclick="showSection('challenges')">
+🎯
+</button>
+
+<button onclick="showSection('achievements')">
+🏆
+</button>
+
+
+<button onclick="showSection('settings')">
+
+<i class="fas fa-gear"></i>
+
+</button>
+
+</div>
+
+<div id="infoPopup" class="info-popup">
+
+<div class="popup-content">
+
+<h3 id="popupTitle"></h3>
+
+<p id="popupValue"></p>
+
+<button onclick="closePopup()">
+Close
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<h3>
+
+🌟 Rise & Shine
+
+</h3>
+
+<p>
+
+Motivate • Inspire • Achieve
+
+</p>
+
+<p>
+
+© 2026 Rise & Shine App
+
+</p>
+
+</footer>
+
+</div>
+
+</div>
+<script src="quote.js"></script>
+<script src="script.js"></script>
+
+<input type="file" id="restoreFile" style="display:none">
+
+</body>
